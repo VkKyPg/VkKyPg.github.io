@@ -1,1 +1,3 @@
-windows.alert(5+6)
+$(document).ready(function(){
+  alert("hello world");
+});
