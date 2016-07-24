@@ -1,5 +1,5 @@
-alert("In js file");
+alert("In js file1");
 $(document).ready(function(){
-  $("Class expand").hide()
-  alert("This is inside js");
+  $(".Class expand").hide();
+  alert("This is inside js2");
 });
