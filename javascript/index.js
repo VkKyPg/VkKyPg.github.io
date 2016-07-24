@@ -15,5 +15,6 @@ $(document).ready(function(){
       $(this).val("+");
       alert("Changed to positive");
     }
+    $(this).next(".Class_Expand").toggle();
   });
 });
