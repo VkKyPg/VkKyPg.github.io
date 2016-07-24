@@ -1,5 +1,5 @@
 alert("In js file");
 $(document).ready(function(){
-  $("Year expand").hide()
+  $("Class expand").hide()
   alert("This is inside js");
 });
