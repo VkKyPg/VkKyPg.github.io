@@ -5,7 +5,7 @@ $(document).ready(function(){
     alert("Just clicked button");
 
     alert("before thing toggled");
-    $(".Class_Expand").togle();
+    $(".Class_Expand").toggle();
 
     alert("after thing was toggled");
 
