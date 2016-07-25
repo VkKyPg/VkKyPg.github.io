@@ -15,6 +15,8 @@ $(document).ready(function(){
       $(this).val("+");
       alert("Changed to positive");
     }
-    $(this).next(".Class_Expand").toggle();
+    alert("before thing toggled");
+    $(this).next(".Class_Expand").slidetoggle();
+    alert("after thing was toggled");
   });
 });
