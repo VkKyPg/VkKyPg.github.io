@@ -3,6 +3,11 @@ $(document).ready(function(){
   $(".Class_Expand").hide();
   $(".Year_Expand").click(function(){
     alert("Just clicked button");
+
+    alert("before thing toggled");
+    $(this).next(".Class_Expand").slidetoggle();
+    alert("after thing was toggled");
+    
     if( $(this).val() == "+")
     {
       alert("Checked if it was plus");
@@ -15,8 +20,6 @@ $(document).ready(function(){
       $(this).val("+");
       alert("Changed to positive");
     }
-    alert("before thing toggled");
-    $(this).next(".Class_Expand").slidetoggle();
-    alert("after thing was toggled");
+
   });
 });
