@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     alert("before thing toggled");
     alert($(this).next(".Class_Expand"));
-    #$(this).next().slidetoggle();
+    $(this).next().slidetoggle();
     alert("after thing was toggled");
 
     if( $(this).val() == "+")
