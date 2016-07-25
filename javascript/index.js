@@ -5,9 +5,9 @@ $(document).ready(function(){
     alert("Just clicked button");
 
     alert("before thing toggled");
-    $(this).next(".Class_Expand").slidetoggle();
+    $(this).next().slidetoggle();
     alert("after thing was toggled");
-    
+
     if( $(this).val() == "+")
     {
       alert("Checked if it was plus");
