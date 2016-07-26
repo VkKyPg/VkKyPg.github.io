@@ -6,6 +6,7 @@ $(document).ready(function(){
 
     alert("before thing toggled");
     Specific_class = $(event.target).closest("h2").find(".Class_Expand");
+    $("body").on("click",".Year_Expand", Specific_class.toggle());
     alert("after thing was toggled");
 
     if( $(this).val() == "+")
