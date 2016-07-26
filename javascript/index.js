@@ -5,8 +5,7 @@ $(document).ready(function(){
     alert("Just clicked button");
 
     alert("before thing toggled");
-    Specific_class = $(event.target).closest("h2").find("Class_Expand");
-    Specific_class.toggle();
+    Specific_class = $(event.target).closest("h2").find(".Class_Expand");
     alert("after thing was toggled");
 
     if( $(this).val() == "+")
