@@ -1,41 +1,11 @@
+<!DOCTYPE html>
 <html>
-  <head> 
-    <title> Hack UCI </title>
-  </head>
-  <body>
-    
-    <!--
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1172773826171973',
-          xfbml      : true,
-          version    : 'v2.8'
-        });
-        FB.AppEvents.logPageView();
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-      
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-</script> -->
-    
-   <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-  </div>
-    
-    <script>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -75,7 +45,6 @@
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.8' // use graph api version 2.8
-    
   });
 
   // Now that we've initialized the JavaScript SDK, we call 
@@ -94,7 +63,7 @@
     statusChangeCallback(response);
   });
 
-  
+  };
 
   // Load the SDK asynchronously
   (function(d, s, id) {
@@ -116,12 +85,18 @@
     });
   }
 </script>
-    
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">
 </div>
-    
-  </body>
+
+</body>
 </html>
