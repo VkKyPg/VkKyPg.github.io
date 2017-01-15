@@ -108,7 +108,7 @@
     FB.api('/1675690099398283/feed', function(response){
       var dataResponse = response.data; //the array for ichel function
       console.log("***");
-      alert(dataResponse);
+      alert(typeof dataResponse);
       console.log("THis is the type:" + dataResponse);
       //call michel method to get the method back (pass in DATAreponse)
       var arrayMessages = getMessages(dataResponse);
