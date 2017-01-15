@@ -89,15 +89,16 @@
           console.log(response);
           document.getElementById('test').innerHTML = response.data.length;
           var currentLength = response.data.length
+          }); // end fb api
+        
           --i;
           if (currentLength > Global){
              alert("The thing just changed: " + currentLength);
              Global = currentLength;
           } //end if loop
        } //end while loop
-      }); /// end fb.api method
     }, 10000); //end the timeout
-  }
+  } //end function
   
   function testAPI1() {
     console.log('Welcome!  Fetching your information.... ');
