@@ -108,7 +108,7 @@
     FB.api('/1675690099398283/feed', function(response){
       var dataResponse = response.data; //the array for ichel function
       console.log("***");
-      console.log(dataResponse);
+      alert(dataResponse);
       console.log("THis is the type:" + dataResponse);
       //call michel method to get the method back (pass in DATAreponse)
       var arrayMessages = getMessages(dataResponse);
@@ -120,7 +120,7 @@
   function compareMessages(arrayQuery, arrayPost){
     alert("in compare")
     alert("TYPE OF ARRAYPOST: " + typeof(arrayPost));
-    alert("IN ARRAYPOST: " + typeof arrayPost); 
+    alert("IN ARRAYPOST: " + arrayPost); 
     var setMessages = new Set();
     for (var outer = 0; outer < arrayQuery.length; outer++){
       for (var inner = 0; inner < arrayPost.length; inner++){
