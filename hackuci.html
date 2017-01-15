@@ -106,7 +106,7 @@
   function testAPI() {
     alert("in TestApi");
     FB.api('/1675690099398283/feed', function(response){
-      console.log("response.data: " + response);
+      console.log("response.data: " + JSON.stringify(response));
       var dataResponse = response.data; //the array for ichel function
       console.log("***");
       alert(typeof dataResponse);
