@@ -79,18 +79,23 @@
   // successful.  See statusChangeCallback() for when this call is made.
   
   function findMatches(){
-    //alert("hello");
+    alert("in beg of findMatches");
     var words = document.getElementById('textboxid').value; //get the words in the textbox
 
     var arrayQuery = words.split(','); //array of input words
+    alert("QueryWords: " + arrayQuery);
     var arrayPost = testAPI(); //array of query words
-    return compareMessages(arrayQuery, arrayPost);
+    alert("arrayWords: " + arrayPost);
+    var messagesYes = compareMessages(arrayQuery, arrayPost);
+    alert("final messages: " + messagesYes);
+    return messagesYes;
   }
   
   function getMessages(posts) {
     var messages = [];
     for (var i = 0; i < posts.length; i++) {
       if ("message" in posts[i]) {
+        alert("Pushing this rn to postArray: " + posts[i].message);
         messages.push(posts[i].message);
       }
     }
@@ -98,6 +103,7 @@
   }
   
   function testAPI() {
+    alert("in TestApi");
     FB.api('/1675690099398283/feed', function(response){
       var dataResponse = response.data; //the array for ichel function
       //call michel method to get the method back (pass in DATAreponse)
@@ -123,16 +129,6 @@
      return setMessages; // reaches maximum 
   }
   
-  
-  
-//   function testAPI1() {
-//     console.log('Welcome!  Fetching your information.... ');
-//     FB.api('/me', function(response) {
-//       console.log('Successful login for: ' + response.name);
-//       document.getElementById('status').innerHTML =
-//         'Thanks for logging in, ' + response.name + '!';
-//     });
-//    }
 </script>
 
 <!--
