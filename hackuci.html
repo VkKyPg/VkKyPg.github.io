@@ -79,7 +79,7 @@
   
   function testAPI() {
     console.log('in test api');
-    FB.api('/UCItextbooks', function(response){
+    FB.api('/groups/UCItextbooks', function(response){
       document.getElementById('test').innerHTML = response.about;
     });
   }
