@@ -83,7 +83,7 @@
     var i = 0;
      
 
-    setTimeout(function(){
+    //setTimeout(function(){
       console.log("in this function");
       var currentLength = 0;
       while (i < 10) { // lt for now, not infinite
@@ -102,9 +102,10 @@
              console.log("The thing just changed: " + currentLength);
              Global = currentLength;
           } //end if loop
+        console.log("DiD one iteration");
         return 1;
        } //end while loop
-    }, 3000); //end the timeout
+   // }, 3000); //end the timeout
     console.log("exited");
   } //end function
   
