@@ -87,23 +87,22 @@
       console.log("in this function");
       var currentLength = 0;
       while (i < 10) { // lt for now, not infinite
-        
-        FB.api('/1675690099398283/feed', function(response){
-          console.log("LOLLL");
-          console.log(response);
-          document.getElementById('test').innerHTML = response.data.length;
-          currentLength = response.data.length
-          console.log("This is the currennt length" + currentLength);
-          }); // end fb api
+       
+         //FB.api('/1675690099398283/feed', function(response){
+         // console.log("LOLLL");
+         // console.log(response);
+         // document.getElementById('test').innerHTML = response.data.length;
+         // currentLength = response.data.length
+         // console.log("This is the currennt length" + currentLength);
+         // }); // end fb api -->
         
           ++i;
-          console.log("this is the currentLength outside" + currentLength);
-          if (currentLength > Global){
-             console.log("The thing just changed: " + currentLength);
-             Global = currentLength;
-          } //end if loop
+          //console.log("this is the currentLength outside" + currentLength);
+          //if (currentLength > Global){
+           //  console.log("The thing just changed: " + currentLength);
+            // Global = currentLength;
+         // } //end if loop
         console.log("DiD one iteration");
-        return 1;
        } //end while loop
    // }, 3000); //end the timeout
     console.log("exited");
