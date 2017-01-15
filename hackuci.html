@@ -86,12 +86,22 @@
     var arrayPost = testAPI(); //array of query words
     return compareMessages(arrayQuery, arrayPost);
   }
-
+  
+  function getMessages(posts) {
+    var messages = [];
+    for (var i = 0; i < posts.length; i++) {
+      if ("message" in posts[i]) {
+        messages.push(posts[i].message);
+      }
+    }
+    return messages;
+  }
+  
   function testAPI() {
     FB.api('/1675690099398283/feed', function(response){
       var dataResponse = response.data; //the array for ichel function
       //call michel method to get the method back (pass in DATAreponse)
-      return (michelmethod)
+      return (getMessages(dataResponse));
     }); // end fb api --
   } //end function
 
