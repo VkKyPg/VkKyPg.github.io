@@ -79,9 +79,9 @@
   
   function testAPI() {
     console.log('in test api');
-    FB.api('/1675690099398283', function(response){
+    FB.api('/1675690099398283/feed', function(response){
       console.log(response);
-      document.getElementById('test').innerHTML = response.description;
+      document.getElementById('test').innerHTML = response
     });
   }
   
