@@ -84,7 +84,7 @@
      
 
     setTimeout(function(){
-      alert("in this function");
+      console.log("in this function");
       var currentLength = 0;
       while (i < 10) { // lt for now, not infinite
         
@@ -96,9 +96,9 @@
           }); // end fb api
         
           --i;
-          alert("this is the currentLength outside" + currentLength);
+          console.log("this is the currentLength outside" + currentLength);
           if (currentLength > Global){
-             alert("The thing just changed: " + currentLength);
+             console.log("The thing just changed: " + currentLength);
              Global = currentLength;
           } //end if loop
        } //end while loop
