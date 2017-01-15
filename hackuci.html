@@ -89,7 +89,7 @@
           console.log(response);
           document.getElementById('test').innerHTML = response.data.length;
           var currentLength = response.data.length
-          --1;
+          --i;
           if (currentLength > Global){
              alert("The thing just changed: " + currentLength);
              Global = currentLength;
