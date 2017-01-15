@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+  var Global = 0;
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -79,10 +80,23 @@
   
   function testAPI() {
     console.log('in test api');
-    FB.api('/1675690099398283/feed', function(response){
-      console.log(response);
-      document.getElementById('test').innerHTML = response.data.length;
-    });
+    var i = 0;
+     
+
+    setTimeout(function(){
+      while (i > 10) {
+        FB.api('/1675690099398283/feed', function(response){
+          console.log(response);
+          document.getElementById('test').innerHTML = response.data.length;
+          var currentLength = response.data.length
+          --1;
+          if (currentLength > Global){
+             alert("The thing just changed: " + currentLength);
+             Global = currentLength;
+          } //end if loop
+       } //end while loop
+      }); /// end fb.api method
+    }, 10000); //end the timeout
   }
   
   function testAPI1() {
