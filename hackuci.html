@@ -78,44 +78,51 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   
-  function testAPI() {
-    console.log('in test api');
-    var i = 0;
-     
+  function findMatches(){
+    //alert("hello");
+    var words = document.getElementById('textboxid').value; //get the words in the textbox
 
-    //setTimeout(function(){
-      console.log("in this function");
-      var currentLength = 0;
-      while (i < 10) { // lt for now, not infinite
-       
-         //FB.api('/1675690099398283/feed', function(response){
-         // console.log("LOLLL");
-         // console.log(response);
-         // document.getElementById('test').innerHTML = response.data.length;
-         // currentLength = response.data.length
-         // console.log("This is the currennt length" + currentLength);
-         // }); // end fb api -->
-        
-          ++i;
-          //console.log("this is the currentLength outside" + currentLength);
-          //if (currentLength > Global){
-           //  console.log("The thing just changed: " + currentLength);
-            // Global = currentLength;
-         // } //end if loop
-        console.log("DiD one iteration");
-       } //end while loop
-   // }, 3000); //end the timeout
-    console.log("exited");
+    var arrayQuery = words.split(','); //array of input words
+    var arrayPost = testAPI(); //array of query words
+    return compareMessages(arrayQuery, arrayPost);
+  }
+
+  function testAPI() {
+    FB.api('/1675690099398283/feed', function(response){
+      var dataResponse = response.data; //the array for ichel function
+      //call michel method to get the method back (pass in DATAreponse)
+      return (michelmethod)
+    }); // end fb api --
   } //end function
+
+  function compareMessages(arrayQuery, arrayPost){
+    alert("in compare")
+    var setMessages = new Set();
+    for (var outer = 0; outer < arrayQuery.length; outer++){
+      for (var inner = 0; inner < arrayPost.length; inner++){
+        if (arrayPost[inner].includes(arrayQuery[outer])){
+          alert("Similar: " + arrayPost[inner]);
+          setMessages.add(arrayPost[inner]);
+        } //end if check include
+        if (setMessages.size == arrayPost.length){
+          alert("exiting: " + setMessages);
+          return setMessages; // reaches maximum 
+        }//end if size loop
+      }//end innter loop
+    } // end outerfor
+     return setMessages; // reaches maximum 
+  }
   
-  function testAPI1() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-   }
+  
+  
+//   function testAPI1() {
+//     console.log('Welcome!  Fetching your information.... ');
+//     FB.api('/me', function(response) {
+//       console.log('Successful login for: ' + response.name);
+//       document.getElementById('status').innerHTML =
+//         'Thanks for logging in, ' + response.name + '!';
+//     });
+//    }
 </script>
 
 <!--
@@ -130,7 +137,9 @@
 <div id="status"></div>
   
 <div id = "test"></div>
-
-<input type = "text" id="TEXTBOX_ID">
+  
+<textarea rows = 4 cols = 50 id="textboxid"> Default Cake,asdf,asdf,asdf </textarea>
+<button type = "button" onclick="findMatches();">Click</button>
+  
 </body>
 </html>
