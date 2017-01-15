@@ -80,6 +80,7 @@
   function testAPI() {
     console.log('in test api');
     FB.api('/68766575472854', function(response){
+      console.log(response);
       document.getElementById('test').innerHTML = response.about;
     });
   }
