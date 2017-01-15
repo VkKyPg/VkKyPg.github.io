@@ -85,7 +85,7 @@
 
     setTimeout(function(){
       alert("in this function");
-      while (i > 10) {
+      while (i < 10) { // lt for now, not infinite
         FB.api('/1675690099398283/feed', function(response){
           console.log(response);
           document.getElementById('test').innerHTML = response.data.length;
