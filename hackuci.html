@@ -111,7 +111,9 @@
       console.log(dataResponse);
       console.log("THis is the type:" + dataResponse);
       //call michel method to get the method back (pass in DATAreponse)
-      return (getMessages(dataResponse));
+      var arrayMessages = getMessages(dataResponse);
+      console.log(arrayMessages);
+      return arrayMessages;
     }); // end fb api --
   } //end function
 
